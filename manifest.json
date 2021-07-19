@@ -1,0 +1,20 @@
+{
+  "name": "socket-hijack",
+  "description": "Sniff and access WebSockets in Chrome",
+  "version": "0.1",
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": ["https://*/*"],
+      "all_frames": true,
+      "js": ["content/syringe.js"]
+    }
+  ],
+  
+  "web_accessible_resources": [
+  	{
+  		"resources": ["lib/socket-sniffer.js"],
+		"matches": ["https://*/*"]
+	}
+  ]
+}
